@@ -31,6 +31,7 @@ namespace DatinApp.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //verifia el entorno
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -38,10 +39,12 @@ namespace DatinApp.API
             else
             {
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                //use htpps 
+                // app.UseHsts();
             }
-
-            app.UseHttpsRedirection();
+//
+            // app.UseHttpsRedirection();
+            //el framewor pero lo usa como middlware
             app.UseMvc();
         }
     }

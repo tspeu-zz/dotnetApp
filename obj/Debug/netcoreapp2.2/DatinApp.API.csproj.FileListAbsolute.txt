@@ -1,0 +1,14 @@
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\bin\Debug\netcoreapp2.2\DatinApp.API.deps.json
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\bin\Debug\netcoreapp2.2\DatinApp.API.runtimeconfig.json
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\bin\Debug\netcoreapp2.2\DatinApp.API.runtimeconfig.dev.json
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\bin\Debug\netcoreapp2.2\DatinApp.API.dll
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\bin\Debug\netcoreapp2.2\DatinApp.API.pdb
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\obj\Debug\netcoreapp2.2\DatinApp.API.csprojAssemblyReference.cache
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\obj\Debug\netcoreapp2.2\DatinApp.API.csproj.CoreCompileInputs.cache
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\obj\Debug\netcoreapp2.2\DatinApp.API.RazorAssemblyInfo.cache
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\obj\Debug\netcoreapp2.2\DatinApp.API.RazorAssemblyInfo.cs
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\obj\Debug\netcoreapp2.2\DatinApp.API.AssemblyInfoInputs.cache
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\obj\Debug\netcoreapp2.2\DatinApp.API.AssemblyInfo.cs
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\obj\Debug\netcoreapp2.2\DatinApp.API.RazorTargetAssemblyInfo.cache
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\obj\Debug\netcoreapp2.2\DatinApp.API.dll
+C:\Users\JM_B\Documents\dotnetJM\dotApp\DatingApp.API\obj\Debug\netcoreapp2.2\DatinApp.API.pdb
