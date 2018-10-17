@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DatinApp.API.Controllers
 {
+//http://localhost:5000/api/elNombredelConrollerValuesControllere
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
