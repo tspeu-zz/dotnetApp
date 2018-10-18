@@ -2,7 +2,7 @@
 ###################
 obj/
 *obj/
-*bin/
+bin/
 ####################33
 *.com
 *.class
@@ -39,3 +39,5 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+obj/Debug/netcoreapp2.2/DatinApp.API.csproj.CoreCompileInputs.cache
+obj/Debug/netcoreapp2.2/DatinApp.API.assets.cache
