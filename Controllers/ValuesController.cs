@@ -14,6 +14,9 @@ namespace DatinApp.API.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            //mostrar execpsiones
+           // throw new Exception("test excepticion");
+
             return new string[] { "Hello", "World" };
         }
 
