@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DatingApp.API.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DatinApp.API.Controllers
 {
@@ -25,13 +26,18 @@ namespace DatinApp.API.Controllers
         //IActionsResult devuelve ademas http response
         // GET api/values
         [HttpGet]
-        public IActionResult GetData()
+        public async Task<IActionResult> GetData()
         {
             //mostrar execpsiones
             // throw new Exception("test excepticion");
 
 //se pasa el contexto y se devuelve Values. de tipo lista
-            var data = _ctx.Values.ToList();
+            //usando sincrosius data, un threat bloqueado
+        //    var data = _ctx.Values.ToList();
+
+        //usando async no threat block  ojo importar EntytyFramework
+        var data = await _ctx.Values.ToListAsync();
+
 //como devuelve 200 de http se usa ok-y la data en forma de lista
             return Ok(data);
         }
@@ -40,11 +46,10 @@ namespace DatinApp.API.Controllers
         // GET api/values/5
         [HttpGet("{id}")]
         // public ActionResult<string> Get(int id)
-        public ActionResult GetData(int id)
+        public async Task<ActionResult> GetData(int id)
         {
             //la interface Datacontext
-            //usan 
-            var data = _ctx.Values.FirstOrDefault(x =>
+            var data = await  _ctx.Values.FirstOrDefaultAsync(x =>
                         x.id == id );
 
             return Ok(data);
