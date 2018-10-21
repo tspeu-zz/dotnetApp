@@ -72,5 +72,36 @@ namespace DatinApp.API.Controllers
         public void Delete(int id)
         {
         }
+
+//https://api.publicapis.org/entries?category=animals&https=true
+[HttpGet("data")]
+  public IActionResult MakeRequest()
+        {
+        // string  requestUrl ="https://api.publicapis.org/entries?category=animals";
+        // string  requestUrl ="https://api.publicapis.org/random";
+        string  requestUrl ="https://api.github.com/repos/vmg/redcarpet/issues?state=closed";
+            try
+            {
+                System.Net.HttpWebRequest request = System.Net.WebRequest.Create(requestUrl) as System.Net.HttpWebRequest;
+                using (System.Net.HttpWebResponse response = request.GetResponse() as System.Net.HttpWebResponse)
+                {
+                    if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                    {
+                        throw new Exception(String.Format("Server error (HTTP {0}: {1}).", response.StatusCode, response.StatusDescription));
+                    }
+
+                // JavaScriptSerializer serializer = new JavaScriptSerializer();
+                // var responseObject = serializer.Deserialize<YourModel>(response);
+                    var responseObject =  response;
+                    return Ok(responseObject);
+                }
+            }
+            catch (Exception e)
+            {
+                // catch exception and log it
+                return null;
+            }
+        }
+
     }
 }
