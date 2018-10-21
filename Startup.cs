@@ -35,6 +35,10 @@ namespace DatinApp.API
             //hay que añadir UseQlite del nugetpackage como npm/tarn
             //>Microsoft.EntityFrameworkCore.Sqlite
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+        
+        //add CORS->
+            services.AddCors();
+        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +56,11 @@ namespace DatinApp.API
                 // app.UseHsts();
             }
 //
+//se especifica el origen de las llamadas permitidas en develop
+            app.UseCors(x => x.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+            
             // app.UseHttpsRedirection();
             //el framewor pero lo usa como middlware
             app.UseMvc();
