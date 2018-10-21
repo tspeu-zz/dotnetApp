@@ -11984,6 +11984,7 @@
       "Microsoft.AspNetCore.App >= 2.2.0-preview2-35157",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0-preview2-35157",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.1.4",
+      "Microsoft.EntityFrameworkCore.Tools >= 2.2.0-preview2-35157",
       "Microsoft.NETCore.App >= 2.2.0-preview2-26905-02"
     ]
   },
@@ -12042,6 +12043,12 @@
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
             "version": "[2.1.4, )"
+          },
+          "Microsoft.EntityFrameworkCore.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.2.0-preview2-35157, )"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",

@@ -17,6 +17,7 @@ namespace DatinApp.API
 {
     public class Startup
     {
+        //consrtructor->
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -29,7 +30,8 @@ namespace DatinApp.API
         {
 
             //añadir el servicio dbContext  e la clase que se a creado
-            services.AddDbContext<DataContext>( data => data.UseSqlite("Connectionstring"));
+            //ADEMAS SE PASA LA CONFIGURACIONA APPSETTING y de ahí puede obtener la configuracion por getConnctionString
+            services.AddDbContext<DataContext>( data => data.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             //hay que añadir UseQlite del nugetpackage como npm/tarn
             //>Microsoft.EntityFrameworkCore.Sqlite
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
