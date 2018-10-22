@@ -1,8 +1,10 @@
 # Compiled source #
 ###################
-obj/
-*obj/
-bin/
+obj
+*.db
+bin
+*.txt
+*.md
 ####################33
 *.com
 *.class
