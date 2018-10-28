@@ -96,7 +96,7 @@ namespace DatinApp.API.Controllers
                     return Ok(responseObject);
                 }
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 // catch exception and log it
                 return null;
