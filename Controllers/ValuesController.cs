@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DatingApp.API.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatinApp.API.Controllers
 {
+
     //http://localhost:5000/api/elNombredelConrollerValuesControllere
+    [Authorize] 
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -44,6 +47,7 @@ namespace DatinApp.API.Controllers
 
 
         // GET api/values/5
+        [AllowAnonymous] //test tiene permisos
         [HttpGet("{id}")]
         // public ActionResult<string> Get(int id)
         public async Task<ActionResult> GetData(int id)

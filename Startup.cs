@@ -12,6 +12,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace DatinApp.API
 {
@@ -43,8 +46,20 @@ namespace DatinApp.API
         // services.AddSingleton puede traer problemas al hacer llamadas recurrentes
         
         //crea una instancia por cada http pero usa la misma si se reutilaza
-        services.AddScoped<IAuthRepository, AuthRepository>();
         //se le pasa la interfase y la implementacion específica
+        services.AddScoped<IAuthRepository, AuthRepository>();
+
+        //añadir middelware auth
+        services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(options => {
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.
+                ASCII.GetBytes(Configuration.GetSection("Appsetting:Token").Value)),
+                ValidateAudience = false
+            };
+        });
         
         
         }
@@ -68,7 +83,11 @@ namespace DatinApp.API
             app.UseCors(x => x.AllowAnyOrigin()
             .AllowAnyHeader()
             .AllowAnyMethod());
-            
+
+            //para usar la auth por token
+            app.UseAuthentication();
+
+
             // app.UseHttpsRedirection();
             //el framewor pero lo usa como middlware
             app.UseMvc();
