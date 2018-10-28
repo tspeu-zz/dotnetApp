@@ -38,6 +38,14 @@ namespace DatinApp.API
         
         //add CORS->
             services.AddCors();
+
+        //Add service de repository
+        // services.AddSingleton puede traer problemas al hacer llamadas recurrentes
+        
+        //crea una instancia por cada http pero usa la misma si se reutilaza
+        services.AddScoped<IAuthRepository, AuthRepository>();
+        //se le pasa la interfase y la implementacion específica
+        
         
         }
 
